@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DFS AI Club Website — Project Handoff</title>
+  <link rel="stylesheet" href="docs.css">
+</head>
+<body>
+  <main>
+    <h1>DFS AI Club Website — Project Handoff</h1>
+    <p class="sub">Location: <code>C:\Users\Vishnu\Desktop\AI Community Website</code> • Date: October 14, 2026 • URL: <a href="http://localhost:3000/">http://localhost:3000/</a></p>
+
+    <div class="card answer">
+      <strong>Core Purpose:</strong> The official portal for the DFS AI Club to transform staff from <em>AI Superusers into AI Builders</em>, running internally as an enterprise startup with a solution marketplace, builder certification, and structured cohorts.
+    </div>
+
+    <h2>1. Hard Requirements & Invariants</h2>
+    <ul>
+      <li><strong>Plain Gray Canvas:</strong> Solid gray background (<code>#edf0f5</code>), zero dot grids or dot patterns.</li>
+      <li><strong>One-Window / One-Scroll Segmentation:</strong> Every primary section consumes a full viewport window (<code>h-screen</code> or <code>min-h-[calc(100vh-4rem)]</code>). The Hero is full-height so subsequent sections do not peek.</li>
+      <li><strong>Hero Card:</strong> Signature blue-violet gradient (<code>linear-gradient(135deg, #5e1ebb 0%, #3538b8 46%, #095fc5 100%)</code>) with tagline <em>"Where AI Users Become AI Builders."</em></li>
+      <li><strong>Top Brand Header:</strong> Official crest (<code>/dfs-ai-club-logo.png</code>) with <em>DFS AI CLUB</em> and subtext <em>"Marketplace for your solution"</em>.</li>
+      <li><strong>Vision Section:</strong> Stage 02 removed completely; exclusively Stage 01 (<em>AI Superusers → AI Builders</em>).</li>
+      <li><strong>CTA Placement:</strong> No repetitive buttons; CTAs live strictly at the end of the page (<em>Join AI Club</em> and <em>Have an idea, submit here</em>).</li>
+      <li><strong>Footer:</strong> Minimal text: <code>©️DFS AI Club - 2026</code>.</li>
+      <li><strong>Browser Subagent:</strong> Do not spawn browser subagents; user provides visual screenshots directly.</li>
+    </ul>
+
+    <h2>2. Section-by-Section Layout Map</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Segment</th>
+            <th>Anchor ID</th>
+            <th>Height / Dimensions</th>
+            <th>Contents</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. Hero</strong></td>
+            <td><code>#hero</code></td>
+            <td><code>h-screen</code>, card <code>h-[82vh]</code></td>
+            <td>DFS AI Club title, tagline, description, signature blue-violet gradient.</td>
+          </tr>
+          <tr>
+            <td><strong>2. Vision</strong></td>
+            <td><code>#vision</code></td>
+            <td><code>min-h-[calc(100vh-4rem)]</code></td>
+            <td>Stage 01 only: AI Superusers → AI Builders, 3 milestones.</td>
+          </tr>
+          <tr>
+            <td><strong>3. About Us</strong></td>
+            <td><code>#about</code></td>
+            <td><code>min-h-[calc(100vh-4rem)]</code></td>
+            <td>5 Startup Pillars: Marketplace, Engineers, Hosted Solutions, Marketing, Certification.</td>
+          </tr>
+          <tr>
+            <td><strong>4. Programs & CTA</strong></td>
+            <td><code>#programs</code></td>
+            <td><code>min-h-[calc(100vh-4rem)]</code></td>
+            <td>Start from Scratch cohort card + Join / Idea submission buttons + Footer.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>3. Component Architecture</h2>
+    <ul>
+      <li><code>src/pages/HomePage.jsx</code>: Parent home experience.</li>
+      <li><code>src/pages/StartFromScratchPage.jsx</code>: 8-week cohort experience (<code>/normal</code>, <code>/engineer</code>).</li>
+      <li><code>src/components/home/HomeNavbar.jsx</code>: Header with brand, tagline, and smooth-scroll anchors.</li>
+      <li><code>src/components/home/HomeHero.jsx</code>: Full-screen hero section.</li>
+      <li><code>src/components/home/HomeVision.jsx</code>: Vision segment.</li>
+      <li><code>src/components/home/HomeAboutUs.jsx</code>: 5 startup operating model cards.</li>
+      <li><code>src/components/home/HomeCtaSection.jsx</code>: Program link + final CTAs.</li>
+      <li><code>src/components/home/HomeFooter.jsx</code>: Minimal footer.</li>
+      <li><code>src/components/home/JoinClubModal.jsx</code>: Registration modal with confetti.</li>
+      <li><code>src/components/home/IdeaSubmissionModal.jsx</code>: Microsoft Forms modal.</li>
+      <li><code>src/components/scratch/</code>: Cohort pedagogy, pilot squads A-D, and 8-week syllabus.</li>
+    </ul>
+
+    <h2>4. Commands</h2>
+    <p>Run development server: <code>npm run dev</code> (port 3000)</p>
+    <p>Build production bundle: <code>npm run build</code> (verified with 0 errors)</p>
+  </main>
+</body>
+</html>
